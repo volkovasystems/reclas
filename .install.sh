@@ -2,12 +2,12 @@ yarn add \
 babel-runtime \
 diatom \
 falzy \
-harden \
+impel \
 kloak \
 metod \
+mrkd \
 posp \
 protype \
-transpher \
 --save && \
 yarn add \
 babel-cli \
@@ -20,11 +20,11 @@ webpack \
 bower install \
 diatom \
 falzy \
-harden \
+impel \
 kloak \
 metod \
+mrkd \
 posp \
 protype \
-transpher \
 --save \
 --force-latest

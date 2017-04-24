@@ -49,23 +49,23 @@
               		{
               			"diatom": "diatom",
               			"falzy": "falzy",
-              			"harden": "harden",
+              			"impel": "impel",
               			"kloak": "kloak",
               			"metod": "metod",
-              			"protype": "protype",
-              			"transpher": "transpher"
+              			"mrkd": "mrkd",
+              			"protype": "protype"
               		}
               	@end-include
               */var _symbol = require("babel-runtime/core-js/symbol");var _symbol2 = _interopRequireDefault(_symbol);function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}
 
 var diatom = require("diatom");
 var falzy = require("falzy");
-var harden = require("harden");
+var impel = require("impel");
 var kloak = require("kloak");
 var metod = require("metod");
+var mrkd = require("mrkd");
 var posp = require("posp");
 var protype = require("protype");
-var transpher = require("transpher");
 
 var CLONED_CLASS = (0, _symbol2.default)("cloned-class");
 var BLUEPRINT = (0, _symbol2.default)("blueprint");
@@ -83,30 +83,28 @@ var reclas = function reclas(blueprint) {
 		throw new Error("invalid blueprint");
 	};
 
-	if (blueprint[CLONED_CLASS] === CLONED_CLASS) {
+	if (mrkd(CLONED_CLASS, blueprint, true)) {
 		return reclas(blueprint[BLUEPRINT]);
 	}
 
 	var clone = diatom(blueprint.name);
 
-	transpher(blueprint, clone, true);
+	kloak(blueprint, clone, CLONED_CLASS);
 
 	/*;
-                                    	@note:
-                                    		Note that, cloned classes, must preserved their default property and values.
-                                    		We will only transfer the name, the prototype methods
-                                    			and any property unique to this blueprint.
-                                    			We will not transfer the constructor or rename the constructor as this will
-                                    			have effects on the cloned class.
-                                    	@end-note
-                                    */
+                                        	@note:
+                                        		Note that, cloned classes, must preserved their default property and values.
+                                        		We will only transfer the name, the prototype methods
+                                        			and any property unique to this blueprint.
+                                        			We will not transfer the constructor or rename the constructor as this will
+                                        			have effects on the cloned class.
+                                        	@end-note
+                                        */
 
 	posp(metod(blueprint.prototype), "constructor").
 	forEach(function (method) {return clone.prototype[method.name] = method;});
 
-	kloak(blueprint, clone, CLONED_CLASS);
-
-	harden(BLUEPRINT, blueprint, clone);
+	impel(BLUEPRINT, blueprint, clone);
 
 	return clone;
 };

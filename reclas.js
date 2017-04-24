@@ -49,23 +49,23 @@
 		{
 			"diatom": "diatom",
 			"falzy": "falzy",
-			"harden": "harden",
+			"impel": "impel",
 			"kloak": "kloak",
 			"metod": "metod",
-			"protype": "protype",
-			"transpher": "transpher"
+			"mrkd": "mrkd",
+			"protype": "protype"
 		}
 	@end-include
 */
 
 const diatom = require( "diatom" )
 const falzy = require( "falzy" );
-const harden = require( "harden" );
+const impel = require( "impel" );
 const kloak = require( "kloak" );
 const metod = require( "metod" );
+const mrkd = require( "mrkd" );
 const posp = require( "posp" );
 const protype = require( "protype" );
-const transpher = require( "transpher" );
 
 const CLONED_CLASS = Symbol( "cloned-class" );
 const BLUEPRINT = Symbol( "blueprint" );
@@ -83,13 +83,13 @@ const reclas = function reclas( blueprint ){
 		throw new Error( "invalid blueprint" );
 	};
 
-	if( blueprint[ CLONED_CLASS ] === CLONED_CLASS ){
+	if( mrkd( CLONED_CLASS, blueprint, true ) ){
 		return reclas( blueprint[ BLUEPRINT ] );
 	}
 
 	let clone = diatom( blueprint.name );
 
-	transpher( blueprint, clone, true );
+	kloak( blueprint, clone, CLONED_CLASS );
 
 	/*;
 		@note:
@@ -104,9 +104,7 @@ const reclas = function reclas( blueprint ){
 	posp( metod( blueprint.prototype ), "constructor" )
 		.forEach( ( method ) => ( clone.prototype[ method.name ] = method ) );
 
-	kloak( blueprint, clone, CLONED_CLASS );
-
-	harden( BLUEPRINT, blueprint, clone );
+	impel( BLUEPRINT, blueprint, clone );
 
 	return clone;
 };
