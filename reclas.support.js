@@ -34,6 +34,9 @@
               			"file": "reclas.js",
               			"module": "reclas",
               			"author": "Richeve S. Bebedor",
+              			"contributors": [
+              				"John Lenon Maghanoy <johnlenonmaghanoy@gmail.com>"
+              			],
               			"eMail": "richeve.bebedor@gmail.com",
               			"repository": "https://github.com/volkovasystems/reclas.git",
               			"test": "reclas-test.js",
