@@ -3,7 +3,9 @@ babel-runtime \
 diatom \
 falzy \
 impel \
+inhere \
 kloak \
+kurse \
 metod \
 mrkd \
 posp \
@@ -21,7 +23,9 @@ bower install \
 diatom \
 falzy \
 impel \
+inhere \
 kloak \
+kurse \
 metod \
 mrkd \
 posp \

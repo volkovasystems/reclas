@@ -53,7 +53,9 @@
               			"diatom": "diatom",
               			"falzy": "falzy",
               			"impel": "impel",
+              			"inhere": "inhere",
               			"kloak": "kloak",
+              			"kurse": "kurse",
               			"metod": "metod",
               			"mrkd": "mrkd",
               			"protype": "protype"
@@ -64,7 +66,9 @@
 var diatom = require("diatom");
 var falzy = require("falzy");
 var impel = require("impel");
+var inhere = require("inhere");
 var kloak = require("kloak");
+var kurse = require("kurse");
 var metod = require("metod");
 var mrkd = require("mrkd");
 var posp = require("posp");
@@ -89,6 +93,10 @@ var reclas = function reclas(blueprint) {
 	if (mrkd(CLONED_CLASS, blueprint, true)) {
 		return reclas(blueprint[BLUEPRINT]);
 	}
+
+	kurse(blueprint);
+
+	inhere(blueprint);
 
 	var clone = diatom(blueprint.name);
 
