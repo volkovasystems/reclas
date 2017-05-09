@@ -1,6 +1,6 @@
 {
   "name": "reclas",
-  "version": "0.3.0",
+  "version": "0.4.0",
   "description": "Clone the blueprint.",
   "main": "reclas.js",
   "support": "reclas.support.js",
@@ -30,15 +30,15 @@
   "homepage": "https://github.com/volkovasystems/reclas#readme",
   "dependencies": {
     "babel-runtime": "^6.23.0",
-    "diatom": "^0.26.0",
+    "diatom": "^0.27.0",
     "falzy": "^0.19.0",
     "impel": "^0.14.0",
-    "inhere": "^0.0.0",
-    "kloak": "^0.21.0",
-    "kurse": "^0.15.0",
-    "metod": "^0.6.0",
-    "mrkd": "^0.3.0",
-    "posp": "^0.1.0",
+    "inhere": "^0.1.0",
+    "kloak": "^0.22.0",
+    "kurse": "^0.16.0",
+    "metod": "^0.7.0",
+    "mrkd": "^0.4.0",
+    "posp": "^0.2.0",
     "protype": "^0.21.0"
   },
   "devDependencies": {
@@ -47,6 +47,6 @@
     "babel-plugin-transform-runtime": "^6.23.0",
     "babel-preset-latest": "^6.24.1",
     "source-map-loader": "^0.2.1",
-    "webpack": "^2.5.0"
+    "webpack": "^2.5.1"
   }
 }
