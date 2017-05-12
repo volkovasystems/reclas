@@ -1,6 +1,6 @@
 {
   "name": "reclas",
-  "version": "0.5.0",
+  "version": "0.6.0",
   "description": "Clone the blueprint.",
   "main": "reclas.js",
   "support": "reclas.support.js",
@@ -34,11 +34,11 @@
     "falzy": "^0.19.0",
     "impel": "^0.14.0",
     "inhere": "^0.2.0",
-    "kloak": "^0.22.0",
+    "kloak": "^0.23.0",
     "kurse": "^0.16.0",
     "metod": "^0.7.0",
     "mrkd": "^0.4.0",
-    "posp": "^0.2.0",
+    "posp": "^0.3.0",
     "protype": "^0.21.0"
   },
   "devDependencies": {
