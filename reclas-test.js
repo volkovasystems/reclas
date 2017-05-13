@@ -21,8 +21,8 @@ assert.equal( ClassAClone( ) instanceof ClassA, true, "should be true" );
 
 assert.equal( ClassAClone instanceof ClassA, true, "should be true" );
 
-assert.equal( ClassA instanceof ClassAClone, false, "should be false" );
+assert.equal( ClassA instanceof ClassAClone, true, "should be true" );
 
-assert.equal( ClassA( ) instanceof ClassAClone, false, "should be false" );
+assert.equal( ClassA( ) instanceof ClassAClone, true, "should be true" );
 
 console.log( "ok" );

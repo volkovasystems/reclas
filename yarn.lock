@@ -982,6 +982,15 @@ cnfgrble@^0.3.0:
     dscrb "^0.3.0"
     zelf "^0.11.0"
 
+cnfgrble@^0.4.0:
+  version "0.4.0"
+  resolved "https://registry.yarnpkg.com/cnfgrble/-/cnfgrble-0.4.0.tgz#83c2a7d0a47af62eced673e0476d15fcc6f8f4fb"
+  dependencies:
+    asyum "^0.5.0"
+    babel-runtime "^6.23.0"
+    dscrb "^0.4.0"
+    zelf "^0.11.0"
+
 co@^4.6.0:
   version "4.6.0"
   resolved "https://registry.yarnpkg.com/co/-/co-4.6.0.tgz#6ea6bdf3d853ae54ccb8e47bfa0bf3f9031fb184"
@@ -1061,6 +1070,20 @@ coprop@^0.3.0:
     kein "^0.25.0"
     protype "^0.21.0"
     wrtble "^0.3.0"
+
+coprop@^0.4.0:
+  version "0.4.0"
+  resolved "https://registry.yarnpkg.com/coprop/-/coprop-0.4.0.tgz#1d7f2e3a1dd92b937672a57412cf9871aa8d4749"
+  dependencies:
+    asyum "^0.5.0"
+    babel-runtime "^6.23.0"
+    cnfgrble "^0.4.0"
+    defyn "^0.4.0"
+    dscrb "^0.4.0"
+    falzy "^0.19.0"
+    kein "^0.25.0"
+    protype "^0.21.0"
+    wrtble "^0.4.0"
 
 core-js@^1.1.1:
   version "1.2.7"
@@ -1192,6 +1215,23 @@ defyn@^0.3.0:
     wichevr "^0.9.0"
     zelf "^0.11.0"
 
+defyn@^0.4.0:
+  version "0.4.0"
+  resolved "https://registry.yarnpkg.com/defyn/-/defyn-0.4.0.tgz#8c134d617dac22ae9f7a612c95b0c5cd4a0c1430"
+  dependencies:
+    allkey "^0.2.0"
+    anykey "^0.2.0"
+    asyum "^0.5.0"
+    babel-runtime "^6.23.0"
+    dscrb "^0.4.0"
+    falzy "^0.19.0"
+    harden "^0.21.0"
+    kein "^0.25.0"
+    protype "^0.21.0"
+    truly "^0.18.0"
+    wichevr "^0.9.0"
+    zelf "^0.11.0"
+
 delayed-stream@~1.0.0:
   version "1.0.0"
   resolved "https://registry.yarnpkg.com/delayed-stream/-/delayed-stream-1.0.0.tgz#df3ae199acadfb7d440aaae0b29e2272b24ec619"
@@ -1296,6 +1336,20 @@ dscrb@^0.3.0:
     harden "^0.21.0"
     kein "^0.25.0"
     protype "^0.21.0"
+    zelf "^0.11.0"
+
+dscrb@^0.4.0:
+  version "0.4.0"
+  resolved "https://registry.yarnpkg.com/dscrb/-/dscrb-0.4.0.tgz#1907dd3bd75b746466ddc09d1c79dea4413c05eb"
+  dependencies:
+    allkey "^0.2.0"
+    anykey "^0.2.0"
+    babel-runtime "^6.23.0"
+    falzy "^0.19.0"
+    harden "^0.21.0"
+    kein "^0.25.0"
+    protype "^0.21.0"
+    wichevr "^0.9.0"
     zelf "^0.11.0"
 
 ecc-jsbn@~0.1.1:
@@ -2002,6 +2056,25 @@ kloak@^0.23.0:
     protype "^0.21.0"
     transpher "^0.25.0"
     transym "^0.0.0"
+    truopt "^0.0.0"
+    wichevr "^0.9.0"
+
+kloak@^0.24.0:
+  version "0.24.0"
+  resolved "https://registry.yarnpkg.com/kloak/-/kloak-0.24.0.tgz#3f7a4ec40b72f4cd69e4d949881c687c88ee6e5e"
+  dependencies:
+    babel-runtime "^6.23.0"
+    budge "^0.28.0"
+    burne "^0.1.0"
+    cagd "^0.1.0"
+    depher "^0.32.0"
+    falzy "^0.19.0"
+    fname "^0.8.0"
+    impel "^0.14.0"
+    mrkd "^0.4.0"
+    protype "^0.21.0"
+    transpher "^0.26.0"
+    transym "^0.1.0"
     truopt "^0.0.0"
     wichevr "^0.9.0"
 
@@ -3124,12 +3197,32 @@ transpher@^0.25.0:
     kein "^0.25.0"
     wichevr "^0.9.0"
 
+transpher@^0.26.0:
+  version "0.26.0"
+  resolved "https://registry.yarnpkg.com/transpher/-/transpher-0.26.0.tgz#f8eae718b6f5f53693306ed52a4dc63a55b8777e"
+  dependencies:
+    babel-runtime "^6.23.0"
+    coprop "^0.4.0"
+    falzy "^0.19.0"
+    kein "^0.25.0"
+    wichevr "^0.9.0"
+
 transym@^0.0.0:
   version "0.0.0"
   resolved "https://registry.yarnpkg.com/transym/-/transym-0.0.0.tgz#419103c18b531fd09acd5dfa90f7620b2a86161b"
   dependencies:
     babel-runtime "^6.23.0"
     coprop "^0.3.0"
+    falzy "^0.19.0"
+    kein "^0.25.0"
+    wichevr "^0.9.0"
+
+transym@^0.1.0:
+  version "0.1.0"
+  resolved "https://registry.yarnpkg.com/transym/-/transym-0.1.0.tgz#ad7337e4f24fad26871d52f898c456ff2e008d97"
+  dependencies:
+    babel-runtime "^6.23.0"
+    coprop "^0.4.0"
     falzy "^0.19.0"
     kein "^0.25.0"
     wichevr "^0.9.0"
@@ -3382,6 +3475,15 @@ wrtble@^0.3.0:
     asyum "^0.5.0"
     babel-runtime "^6.23.0"
     dscrb "^0.3.0"
+    zelf "^0.11.0"
+
+wrtble@^0.4.0:
+  version "0.4.0"
+  resolved "https://registry.yarnpkg.com/wrtble/-/wrtble-0.4.0.tgz#84cc3fefd51e9d336f895887ef5c174455eaed58"
+  dependencies:
+    asyum "^0.5.0"
+    babel-runtime "^6.23.0"
+    dscrb "^0.4.0"
     zelf "^0.11.0"
 
 xtend@^4.0.0:
