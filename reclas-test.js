@@ -15,7 +15,8 @@ ClassAClone( ).hello( );
 
 assert.equal( ClassAClone.name, ClassA.name, "should be equal name" )
 
-assert.equal( ClassAClone( ).hello( ), ClassA( ).hello( ), "should be equal return value" );
+assert.equal( ClassAClone( ).hello( ), ClassA( ).hello( ),
+"should be equal return value" );
 
 assert.equal( ClassAClone( ) instanceof ClassA, true, "should be true" );
 
