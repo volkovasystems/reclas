@@ -50,23 +50,30 @@
               
               	@include:
               		{
+              			"cntsyz": "cntsyz",
               			"diatom": "diatom",
+              			"divoid": "divoid",
               			"falzy": "falzy",
               			"impel": "impel",
               			"inhere": "inhere",
+              			"katalyz": "katalyz",
               			"kloak": "kloak",
               			"kurse": "kurse",
               			"metod": "metod",
               			"mrkd": "mrkd",
+              			"posp": "posp",
               			"protype": "protype"
               		}
               	@end-include
               */var _symbol = require("babel-runtime/core-js/symbol");var _symbol2 = _interopRequireDefault(_symbol);function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}
 
+var cntsyz = require("cntsyz");
 var diatom = require("diatom");
+var divoid = require("divoid");
 var falzy = require("falzy");
 var impel = require("impel");
 var inhere = require("inhere");
+var katalyz = require("katalyz");
 var kloak = require("kloak");
 var kurse = require("kurse");
 var metod = require("metod");
@@ -90,9 +97,21 @@ var reclas = function reclas(blueprint) {
 		throw new Error("invalid blueprint");
 	};
 
+	/*;
+    	@note:
+    		Extract the current blueprint class structure.
+    			Because the old blueprint may not have the new properties of the new blueprint.
+    	@end-note
+    */
+
+	var residue = katalyz(blueprint);
 	if (mrkd(CLONED_CLASS, blueprint, true)) {
-		return reclas(blueprint[BLUEPRINT]);
+		residue = katalyz(blueprint, blueprint[BLUEPRINT]);
+
+		blueprint = blueprint[BLUEPRINT];
 	}
+
+	divoid(blueprint);
 
 	kurse(blueprint);
 
@@ -109,11 +128,22 @@ var reclas = function reclas(blueprint) {
                                         			and any property unique to this blueprint.
                                         			We will not transfer the constructor or rename the constructor as this will
                                         			have effects on the cloned class.
+                                        			We will not also transfer any methods with name "initialize"
                                         	@end-note
                                         */
 
-	posp(metod(blueprint.prototype), "constructor").
+
+	posp(metod(blueprint.prototype), ["constructor", "initialize"]).
 	forEach(function (method) {return clone.prototype[method.name] = method;});
+
+	/*;
+                                                                             	@note:
+                                                                             		Reconstruct the clone using the residue.
+                                                                             			This will make the cloned class looks entirely similar to the blueprint.
+                                                                             	@end-note
+                                                                             */
+
+	cntsyz(clone, residue);
 
 	impel(BLUEPRINT, blueprint, clone);
 

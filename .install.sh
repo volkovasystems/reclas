@@ -1,9 +1,12 @@
 yarn add \
 babel-runtime \
+cntsyz \
 diatom \
+divoid \
 falzy \
 impel \
 inhere \
+katalyz \
 kloak \
 kurse \
 metod \
@@ -20,10 +23,13 @@ source-map-loader \
 webpack \
 --dev && \
 bower install \
+cntsyz \
 diatom \
+divoid \
 falzy \
 impel \
 inhere \
+katalyz \
 kloak \
 kurse \
 metod \
