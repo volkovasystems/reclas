@@ -1,6 +1,6 @@
 {
   "name": "reclas",
-  "version": "0.8.0",
+  "version": "0.9.0",
   "description": "Clone the blueprint.",
   "main": "reclas.deploy.js",
   "support": "reclas.support.js",
@@ -22,9 +22,6 @@
     "test",
     "tests"
   ],
-  "resolutions": {
-    "diatom": "^0.28.0"
-  },
   "dependencies": {
     "cntsyz": "^0.0.0",
     "diatom": "^0.28.0",
@@ -37,7 +34,7 @@
     "kurse": "^0.16.0",
     "metod": "^0.7.0",
     "mrkd": "^0.4.0",
-    "posp": "^0.4.0",
+    "posp": "^0.5.0",
     "protype": "^0.21.0"
   }
 }
