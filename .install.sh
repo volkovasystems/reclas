@@ -1,5 +1,6 @@
 yarn add \
 babel-runtime \
+coprop \
 cntsyz \
 diatom \
 divoid \
@@ -23,6 +24,7 @@ source-map-loader \
 webpack \
 --dev && \
 bower install \
+coprop \
 cntsyz \
 diatom \
 divoid \

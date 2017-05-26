@@ -50,6 +50,7 @@
               
               	@include:
               		{
+              			"coprop": "coprop",
               			"cntsyz": "cntsyz",
               			"diatom": "diatom",
               			"divoid": "divoid",
@@ -65,8 +66,9 @@
               			"protype": "protype"
               		}
               	@end-include
-              */var _symbol = require("babel-runtime/core-js/symbol");var _symbol2 = _interopRequireDefault(_symbol);function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}
+              */var _symbol = require("babel-runtime/core-js/symbol");var _symbol2 = _interopRequireDefault(_symbol);var _for = require("babel-runtime/core-js/symbol/for");var _for2 = _interopRequireDefault(_for);function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}
 
+var coprop = require("coprop");
 var cntsyz = require("cntsyz");
 var diatom = require("diatom");
 var divoid = require("divoid");
@@ -81,6 +83,7 @@ var mrkd = require("mrkd");
 var posp = require("posp");
 var protype = require("protype");
 
+var CLASS = (0, _for2.default)("class");
 var CLONED_CLASS = (0, _symbol2.default)("cloned-class");
 var BLUEPRINT = (0, _symbol2.default)("blueprint");
 
@@ -119,6 +122,10 @@ var reclas = function reclas(blueprint) {
 
 	var clone = diatom(blueprint.name);
 
+	if (!mrkd(CLASS, blueprint, true) && !mrkd("diatomic", blueprint)) {
+		coprop("constructor", blueprint.prototype, clone.prototype);
+	}
+
 	kloak(blueprint, clone, CLONED_CLASS);
 
 	/*;
@@ -128,12 +135,10 @@ var reclas = function reclas(blueprint) {
                                         			and any property unique to this blueprint.
                                         			We will not transfer the constructor or rename the constructor as this will
                                         			have effects on the cloned class.
-                                        			We will not also transfer any methods with name "initialize"
                                         	@end-note
                                         */
 
-
-	posp(metod(blueprint.prototype), ["constructor", "initialize"]).
+	posp(metod(blueprint.prototype), "constructor").
 	forEach(function (method) {return clone.prototype[method.name] = method;});
 
 	/*;

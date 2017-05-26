@@ -50,6 +50,7 @@
 
 	@include:
 		{
+			"coprop": "coprop",
 			"cntsyz": "cntsyz",
 			"diatom": "diatom",
 			"divoid": "divoid",
@@ -67,6 +68,7 @@
 	@end-include
 */
 
+const coprop = require( "coprop" );
 const cntsyz = require( "cntsyz" );
 const diatom = require( "diatom" );
 const divoid = require( "divoid" );
@@ -81,6 +83,7 @@ const mrkd = require( "mrkd" );
 const posp = require( "posp" );
 const protype = require( "protype" );
 
+const CLASS = Symbol.for( "class" );
 const CLONED_CLASS = Symbol( "cloned-class" );
 const BLUEPRINT = Symbol( "blueprint" );
 
@@ -119,6 +122,10 @@ const reclas = function reclas( blueprint ){
 
 	let clone = diatom( blueprint.name );
 
+	if( !mrkd( CLASS, blueprint, true ) && !mrkd( "diatomic", blueprint ) ){
+		coprop( "constructor", blueprint.prototype, clone.prototype );
+	}
+
 	kloak( blueprint, clone, CLONED_CLASS );
 
 	/*;
@@ -129,11 +136,9 @@ const reclas = function reclas( blueprint ){
 
 			We will not transfer the constructor or rename the constructor as this will
 				have effects on the cloned class.
-
-			We will not also transfer any methods with name "initialize"
 		@end-note
 	*/
-	posp( metod( blueprint.prototype ), [ "constructor", "initialize" ] )
+	posp( metod( blueprint.prototype ), "constructor" )
 		.forEach( ( method ) => ( clone.prototype[ method.name ] = method ) );
 
 	/*;
