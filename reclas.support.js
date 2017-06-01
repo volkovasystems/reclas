@@ -60,9 +60,8 @@
               			"katalyz": "katalyz",
               			"kloak": "kloak",
               			"kurse": "kurse",
-              			"metod": "metod",
+              			"meton": "meton",
               			"mrkd": "mrkd",
-              			"posp": "posp",
               			"protype": "protype"
               		}
               	@end-include
@@ -78,9 +77,8 @@ var inhere = require("inhere");
 var katalyz = require("katalyz");
 var kloak = require("kloak");
 var kurse = require("kurse");
-var metod = require("metod");
+var meton = require("meton");
 var mrkd = require("mrkd");
-var posp = require("posp");
 var protype = require("protype");
 
 var CLASS = (0, _for2.default)("class");
@@ -130,23 +128,19 @@ var reclas = function reclas(blueprint) {
 
 	/*;
                                         	@note:
-                                        		Note that, cloned classes, must preserved their default property and values.
-                                        		We will only transfer the name, the prototype methods
-                                        			and any property unique to this blueprint.
-                                        			We will not transfer the constructor or rename the constructor as this will
-                                        			have effects on the cloned class.
+                                        		Manually, transfer method names excluding anything related to constructor.
                                         	@end-note
                                         */
-
-	posp(metod(blueprint.prototype), "constructor").
-	forEach(function (method) {return clone.prototype[method.name] = method;});
+	meton(blueprint.prototype).forEach(function (method) {
+		clone.prototype[method] = blueprint.prototype[method];
+	});
 
 	/*;
-                                                                             	@note:
-                                                                             		Reconstruct the clone using the residue.
-                                                                             			This will make the cloned class looks entirely similar to the blueprint.
-                                                                             	@end-note
-                                                                             */
+     	@note:
+     		Reconstruct the clone using the residue.
+     			This will make the cloned class looks entirely similar to the blueprint.
+     	@end-note
+     */
 
 	cntsyz(clone, residue);
 

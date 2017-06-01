@@ -10,9 +10,8 @@ inhere \
 katalyz \
 kloak \
 kurse \
-metod \
+meton \
 mrkd \
-posp \
 protype \
 --save && \
 yarn add \
@@ -34,9 +33,8 @@ inhere \
 katalyz \
 kloak \
 kurse \
-metod \
+meton \
 mrkd \
-posp \
 protype \
 --save \
 --force-latest

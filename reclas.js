@@ -60,9 +60,8 @@
 			"katalyz": "katalyz",
 			"kloak": "kloak",
 			"kurse": "kurse",
-			"metod": "metod",
+			"meton": "meton",
 			"mrkd": "mrkd",
-			"posp": "posp",
 			"protype": "protype"
 		}
 	@end-include
@@ -78,9 +77,8 @@ const inhere = require( "inhere" );
 const katalyz = require( "katalyz" );
 const kloak = require( "kloak" );
 const kurse = require( "kurse" );
-const metod = require( "metod" );
+const meton = require( "meton" );
 const mrkd = require( "mrkd" );
-const posp = require( "posp" );
 const protype = require( "protype" );
 
 const CLASS = Symbol.for( "class" );
@@ -130,16 +128,12 @@ const reclas = function reclas( blueprint ){
 
 	/*;
 		@note:
-			Note that, cloned classes, must preserved their default property and values.
-			We will only transfer the name, the prototype methods
-				and any property unique to this blueprint.
-
-			We will not transfer the constructor or rename the constructor as this will
-				have effects on the cloned class.
+			Manually, transfer method names excluding anything related to constructor.
 		@end-note
 	*/
-	posp( metod( blueprint.prototype ), "constructor" )
-		.forEach( ( method ) => ( clone.prototype[ method.name ] = method ) );
+	meton( blueprint.prototype ).forEach( ( method ) => {
+		clone.prototype[ method ] = blueprint.prototype[ method ];
+	} );
 
 	/*;
 		@note:
