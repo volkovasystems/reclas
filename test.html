@@ -1,8 +1,55 @@
+<!DOCTYPE html>
 <html>
 	<head>
-		<script
-			type="application/javascript"
-			src="./reclas.deploy.js">
-		</script>
+		<title>reclas unit test</title>
+
+		<link rel="stylesheet" href="https://code.jquery.com/qunit/qunit-2.3.2.css">
+
+		<script type="application/javascript" src="https://code.jquery.com/qunit/qunit-2.3.2.js"></script>
+
+		<script type="application/javascript" src="./reclas.deploy.js"></script>
+
+		<script type="application/javascript" src="./bower_components/diatom/diatom.deploy.js"></script>
 	</head>
+
+	<body>
+		<div id="qunit"></div>
+
+		<div id="qunit-fixture"></div>
+
+		<script type="application/javascript">
+			QUnit.test( "reclas unit test", function( assert ) {
+
+				let ClassA = diatom( "ClassA" );
+				ClassA.prototype.hello = function hello( ){
+					return "hello world";
+				};
+
+				let ClassAClone = reclas( ClassA );
+
+				ClassAClone( ).hello( );
+
+				assert.equal( ClassAClone.name, ClassA.name, "should be equal name" )
+
+				assert.equal( ClassAClone( ).hello( ), ClassA( ).hello( ), "should be equal return value" );
+
+				assert.equal( ClassAClone( ) instanceof ClassA, true, "should be true" );
+
+				assert.equal( ClassAClone instanceof ClassA, true, "should be true" );
+
+				assert.equal( ClassA instanceof ClassAClone, true, "should be true" );
+
+				assert.equal( ClassA( ) instanceof ClassAClone, true, "should be true" );
+
+				let NewDate = reclas( Date );
+
+				assert.equal( NewDate.name, Date.name, "should be equal" );
+
+				assert.equal( NewDate instanceof Date, true, "should be true" );
+
+				assert.equal( NewDate( ) instanceof Date, true, "should be true" );
+
+			} );
+		</script>
+	</body>
 </html>
