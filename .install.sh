@@ -12,6 +12,7 @@ kloak \
 kurse \
 meton \
 mrkd \
+ntrprt \
 protype \
 --save && \
 yarn add \
@@ -35,6 +36,7 @@ kloak \
 kurse \
 meton \
 mrkd \
+ntrprt \
 protype \
 --save \
 --force-latest

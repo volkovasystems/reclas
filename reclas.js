@@ -63,6 +63,7 @@
 			"kurse": "kurse",
 			"meton": "meton",
 			"mrkd": "mrkd",
+			"ntrprt": "ntrprt",
 			"protype": "protype"
 		}
 	@end-include
@@ -80,6 +81,7 @@ const kloak = require( "kloak" );
 const kurse = require( "kurse" );
 const meton = require( "meton" );
 const mrkd = require( "mrkd" );
+const ntrprt = require( "ntrprt" );
 const protype = require( "protype" );
 
 const CLASS = Symbol.for( "class" );
@@ -108,9 +110,11 @@ const reclas = function reclas( blueprint ){
 	*/
 	let residue = katalyz( blueprint );
 	if( mrkd( CLONED_CLASS, blueprint, true ) ){
-		residue = katalyz( blueprint, blueprint[ BLUEPRINT ] );
+		let origin = ntrprt( BLUEPRINT, blueprint );
 
-		blueprint = blueprint[ BLUEPRINT ];
+		residue = katalyz( blueprint, origin );
+
+		blueprint = origin;
 	}
 
 	divoid( blueprint );

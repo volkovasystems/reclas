@@ -63,6 +63,7 @@
               			"kurse": "kurse",
               			"meton": "meton",
               			"mrkd": "mrkd",
+              			"ntrprt": "ntrprt",
               			"protype": "protype"
               		}
               	@end-include
@@ -80,6 +81,7 @@ var kloak = require("kloak");
 var kurse = require("kurse");
 var meton = require("meton");
 var mrkd = require("mrkd");
+var ntrprt = require("ntrprt");
 var protype = require("protype");
 
 var CLASS = (0, _for2.default)("class");
@@ -108,9 +110,11 @@ var reclas = function reclas(blueprint) {
 
 	var residue = katalyz(blueprint);
 	if (mrkd(CLONED_CLASS, blueprint, true)) {
-		residue = katalyz(blueprint, blueprint[BLUEPRINT]);
+		var origin = ntrprt(BLUEPRINT, blueprint);
 
-		blueprint = blueprint[BLUEPRINT];
+		residue = katalyz(blueprint, origin);
+
+		blueprint = origin;
 	}
 
 	divoid(blueprint);
