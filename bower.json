@@ -1,6 +1,6 @@
 {
   "name": "reclas",
-  "version": "0.15.0",
+  "version": "0.16.0",
   "description": "Clone the blueprint.",
   "main": "reclas.deploy.js",
   "support": "reclas.support.js",
@@ -24,19 +24,18 @@
     "tests"
   ],
   "dependencies": {
-    "coprop": "^0.6.0",
-    "cntsyz": "^0.2.0",
-    "diatom": "^0.32.0",
-    "divoid": "^0.3.0",
+    "coprop": "^0.7.0",
+    "cntsyz": "^0.3.0",
+    "diatom": "^0.33.0",
+    "divoid": "^0.4.0",
     "falzy": "^0.20.0",
-    "impel": "^0.15.0",
-    "inhere": "^0.4.0",
-    "katalyz": "^0.1.0",
-    "kloak": "^0.28.0",
-    "kurse": "^0.19.0",
-    "meton": "^0.2.0",
-    "mrkd": "^0.8.0",
-    "ntrprt": "^0.1.0",
-    "protype": "^0.22.0"
+    "impel": "^0.17.0",
+    "inhere": "^0.5.0",
+    "katalyz": "^0.2.0",
+    "kloak": "^0.29.0",
+    "kurse": "^0.20.0",
+    "meton": "^0.3.0",
+    "mrkd": "^0.9.0",
+    "ntrprt": "^0.3.0"
   }
 }

@@ -63,8 +63,7 @@
 			"kurse": "kurse",
 			"meton": "meton",
 			"mrkd": "mrkd",
-			"ntrprt": "ntrprt",
-			"protype": "protype"
+			"ntrprt": "ntrprt"
 		}
 	@end-include
 */
@@ -82,7 +81,6 @@ const kurse = require( "kurse" );
 const meton = require( "meton" );
 const mrkd = require( "mrkd" );
 const ntrprt = require( "ntrprt" );
-const protype = require( "protype" );
 
 const CLASS = Symbol.for( "class" );
 const CLONED_CLASS = Symbol( "cloned-class" );
@@ -97,7 +95,7 @@ const reclas = function reclas( blueprint ){
 		@end-meta-configuration
 	*/
 
-	if( falzy( blueprint ) || !protype( blueprint, FUNCTION ) ){
+	if( falzy( blueprint ) || typeof blueprint != "function" ){
 		throw new Error( "invalid blueprint" );
 	};
 

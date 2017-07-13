@@ -13,7 +13,6 @@ kurse \
 meton \
 mrkd \
 ntrprt \
-protype \
 --save && \
 yarn add \
 babel-cli \
@@ -37,6 +36,5 @@ kurse \
 meton \
 mrkd \
 ntrprt \
-protype \
 --save \
 --force-latest

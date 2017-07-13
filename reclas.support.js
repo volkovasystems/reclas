@@ -63,8 +63,7 @@
               			"kurse": "kurse",
               			"meton": "meton",
               			"mrkd": "mrkd",
-              			"ntrprt": "ntrprt",
-              			"protype": "protype"
+              			"ntrprt": "ntrprt"
               		}
               	@end-include
               */var _symbol = require("babel-runtime/core-js/symbol");var _symbol2 = _interopRequireDefault(_symbol);var _for = require("babel-runtime/core-js/symbol/for");var _for2 = _interopRequireDefault(_for);function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}
@@ -82,7 +81,6 @@ var kurse = require("kurse");
 var meton = require("meton");
 var mrkd = require("mrkd");
 var ntrprt = require("ntrprt");
-var protype = require("protype");
 
 var CLASS = (0, _for2.default)("class");
 var CLONED_CLASS = (0, _symbol2.default)("cloned-class");
@@ -97,7 +95,7 @@ var reclas = function reclas(blueprint) {
                                          	@end-meta-configuration
                                          */
 
-	if (falzy(blueprint) || !protype(blueprint, FUNCTION)) {
+	if (falzy(blueprint) || typeof blueprint != "function") {
 		throw new Error("invalid blueprint");
 	};
 
